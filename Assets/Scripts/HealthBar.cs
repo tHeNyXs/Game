@@ -5,7 +5,6 @@ using TMPro;
 public class HealthBar : MonoBehaviour
 {
     public Slider slider;
-    public TMP_Text healthText;
     public int maxHealth;
     public int currentHealth;
 
@@ -13,7 +12,6 @@ public class HealthBar : MonoBehaviour
     {
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
-        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
     }
 
     void Update()

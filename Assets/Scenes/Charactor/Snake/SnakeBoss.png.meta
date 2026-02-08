@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e8d756f5f46db9041b3416816e0cd7d5
+guid: 57576c7a1d23e354db6b5bfbcdc74c8f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7389737621994081570
-    second: Small_Snake_0
+      213: 3049146478479648502
+    second: SnakeBoss_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Small_Snake_0
+      name: SnakeBoss_0
       rect:
         serializedVersion: 2
-        x: 608
-        y: 840
-        width: 1597
-        height: 1104
+        x: 666
+        y: 492
+        width: 1539
+        height: 1916
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ed2f3b909c0627990800000000000000
-      internalID: -7389737621994081570
+      spriteID: 6f6a9ed219eb05a20800000000000000
+      internalID: 3049146478479648502
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Small_Snake_0: -7389737621994081570
+      SnakeBoss_0: 3049146478479648502
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

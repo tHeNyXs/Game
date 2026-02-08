@@ -44,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+
         playerState = playerMovement.GetComponent<PlayerState>();
     }
 
@@ -117,9 +118,12 @@ public class DialogueManager : MonoBehaviour
         {
             StopCoroutine(autoDialogueCoroutine);
             autoDialogueCoroutine = null;
-            nextButton.SetActive(true);
-            name.SetActive(true);
-            potrailBox.SetActive(true);
+            if (nextButton != null)
+            {
+                nextButton.SetActive(true);
+                name.SetActive(true);
+                potrailBox.SetActive(true);
+            }
         }
         
         if (freeze) playerState.SwitchState(PlayerState.State.Normal);

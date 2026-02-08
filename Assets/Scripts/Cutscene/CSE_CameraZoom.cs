@@ -66,6 +66,10 @@ public class CSE_CameraZoom : CutsceneElementBase
             normalCutscene.OnCutsceneFinished();
             playerState.SwitchState(PlayerState.State.Normal);
         }
+        if (normalCutscene == null)
+        {
+            playerState.SwitchState(PlayerState.State.Normal);
+        }
         cutsceneHandler.PlayNextElement();
     }
 

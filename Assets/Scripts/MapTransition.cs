@@ -9,9 +9,11 @@ public class MapTransition : MonoBehaviour
     [SerializeField] private PolygonCollider2D mapBoundary;
     private CinemachineConfiner2D confiner;
     [SerializeField] Direction direction;
-    enum Direction { Up, Down, Left, Right }
+    enum Direction { Up, Down, Left, Right, None }
     [SerializeField] Animator transitionAnimator;
     private bool isTransitioning = false;
+
+    [SerializeField] private float delay = 0f;
 
     private void Awake()
     {
@@ -35,6 +37,9 @@ public class MapTransition : MonoBehaviour
 
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        if (delay > 0f)
+            yield return new WaitForSeconds(delay);
 
         transitionAnimator.Play("End");
         yield return new WaitForSeconds(1f);
@@ -68,6 +73,8 @@ public class MapTransition : MonoBehaviour
                 break;
             case Direction.Right:
                 newPosition.x += offset;
+                break;
+            case Direction.None:
                 break;
         }
 

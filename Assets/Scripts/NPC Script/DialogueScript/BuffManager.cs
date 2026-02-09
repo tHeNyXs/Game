@@ -98,7 +98,7 @@ public class BuffManager : MonoBehaviour, ICutsceneDialogue
         }
         else
         {
-            choiceButtons[0].GetComponentInChildren<TMP_Text>().text = "จบบทสนทนา";
+            choiceButtons[0].GetComponentInChildren<TMP_Text>().text = "ต่อไป";
             choiceButtons[0].onClick.AddListener(EndDialogue);
             choiceButtons[0].gameObject.SetActive(true);
         }

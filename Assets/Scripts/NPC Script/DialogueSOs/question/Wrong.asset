@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969d6d29b1180c148a1a1165891d2aee, type: 3}
-  m_Name: HowToOpenBox
+  m_Name: Wrong
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
   lines:
-  - speaker: {fileID: 11400000, guid: 5486e9a830ee4ab47b2e6c8e6c2e3de9, type: 2}
-    text: "\u0E40\u0E02\u0E49\u0E32\u0E44\u0E1B\u0E43\u0E01\u0E25\u0E49 \u0E46 \u0E01\u0E25\u0E48\u0E2D\u0E07
-      \u0E41\u0E25\u0E49\u0E27\u0E01\u0E14 F \u0E40\u0E1E\u0E37\u0E48\u0E2D\u0E17\u0E33\u0E01\u0E32\u0E23\u0E40\u0E1B\u0E34\u0E14\u0E01\u0E25\u0E48\u0E2D\u0E07"
+  - speaker: {fileID: 0}
+    text: "\u0E1C\u0E37\u0E14\u0E25\u0E30\u0E04\u0E49\u0E32\u0E1A"
   options: []

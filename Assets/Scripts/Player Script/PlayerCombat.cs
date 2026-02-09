@@ -8,7 +8,7 @@ public class PlayerCombat : MonoBehaviour
     public int damage = 1;
     public Animator anim;
 
-    public float cooldown = 2f;
+    public float cooldown = 0.5f;
     private float timer;
 
     private void Update()

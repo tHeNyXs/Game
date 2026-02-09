@@ -8,10 +8,15 @@ public class HealthBar : MonoBehaviour
     public int maxHealth;
     public int currentHealth;
 
+    [Header("Death UI")]
+    public GameObject deathCanvas;
+
     void Start()
     {
         currentHealth = maxHealth;
         SetMaxHealth(maxHealth);
+
+        deathCanvas.SetActive(false);
     }
 
     void Update()
@@ -25,7 +30,20 @@ public class HealthBar : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         SetHealth(currentHealth);
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        deathCanvas.SetActive(true);
+        Time.timeScale = 0f;
+        Debug.Log("Player Died");
     }
 
     public void SetHealth(int health)

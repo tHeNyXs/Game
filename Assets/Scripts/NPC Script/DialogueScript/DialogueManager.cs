@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-public class DialogueManager : MonoBehaviour
+public class DialogueManager : MonoBehaviour, ICutsceneDialogue
 {
     public static DialogueManager Instance;
 
@@ -46,6 +46,13 @@ public class DialogueManager : MonoBehaviour
         canvasGroup.blocksRaycasts = false;
 
         playerState = playerMovement.GetComponent<PlayerState>();
+    }
+
+    public void SetOption(bool tempFreeze, bool tempAutoDialogue, float tempAutoDelay)
+    {
+        freeze = tempFreeze;
+        autoDialogue = tempAutoDialogue;
+        autoDelay = tempAutoDelay;
     }
 
     public void StartDialogue(DialogueSO dialogueSO)

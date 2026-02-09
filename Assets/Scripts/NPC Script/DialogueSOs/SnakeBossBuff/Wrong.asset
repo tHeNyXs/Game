@@ -10,7 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 969d6d29b1180c148a1a1165891d2aee, type: 3}
-  m_Name: BoxQuestion
+  m_Name: Wrong
   m_EditorClassIdentifier: Assembly-CSharp::DialogueSO
-  lines: []
+  lines:
+  - speaker: {fileID: 0}
+    text: "\u0E40\u0E2A\u0E35\u0E22\u0E43\u0E08\u0E14\u0E49\u0E27\u0E22 \u0E19\u0E32\u0E22\u0E15\u0E2D\u0E1A\u0E1C\u0E34\u0E14"
   options: []

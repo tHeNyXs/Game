@@ -14,6 +14,12 @@ public class NormalCutscene : MonoBehaviour
 
     private bool hasStarted = false;
     private bool cutsceneFinished = false;
+    public enum CutsceneDialogueType
+    {
+        Story,
+        Buff
+    }
+    public CutsceneDialogueType dialogueType;
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,10 +45,26 @@ public class NormalCutscene : MonoBehaviour
     {
         while (!cutsceneFinished && !instantShow)
             yield return null;
-        DialogueManager.Instance.freeze = freeze;
-        DialogueManager.Instance.autoDelay = autoDelay;
-        DialogueManager.Instance.autoDialogue = autoDialogue;
-        DialogueManager.Instance.StartDialogue(dialogueSO);
+        ICutsceneDialogue manager = null;
+        switch (dialogueType)
+        {
+            case CutsceneDialogueType.Story:
+                manager = DialogueManager.Instance;
+                break;
+
+            case CutsceneDialogueType.Buff:
+                manager = BuffManager.Instance;
+                break;
+        }
+
+        if (manager == null)
+        {
+            Debug.LogError("Dialogue Manager not found!");
+            yield break;
+        }
+
+        manager.SetOption(freeze, autoDialogue, autoDelay);
+        manager.StartDialogue(dialogueSO);
     }
 
     public void OnCutsceneFinished()

@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 9ba44ef9288872540a0f10436da0e776
+guid: e6e34d7f5fb21e347adbc8c1b2539587
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1426366445350438512
-    second: Attack0_0
+      213: 4999890389437057214
+    second: Happy0_0
+  - first:
+      213: 2761309645219580807
+    second: Happy0_1
+  - first:
+      213: -8592539175475763600
+    second: Happy0_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack0_0
+      name: Happy0_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 138
-        width: 2850
-        height: 2707
+        x: 0
+        y: 0
+        width: 2900
+        height: 2900
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 099b9517647843ce0800000000000000
-      internalID: -1426366445350438512
+      spriteID: eb8094291dd236540800000000000000
+      internalID: 4999890389437057214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Happy0_1
+      rect:
+        serializedVersion: 2
+        x: 949
+        y: 2399
+        width: 502
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78b4c260e74225620800000000000000
+      internalID: 2761309645219580807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Happy0_2
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 2399
+        width: 502
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 076a327252b21c880800000000000000
+      internalID: -8592539175475763600
       vertices: []
       indices: 
       edges: []
@@ -125,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 72ab2ebc63f41514d9addd3324b730bf
+    spriteID: d00003f3c5352d74e8b97c2d35fa5c2e
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Attack0_0: -1426366445350438512
+      Happy0_0: 4999890389437057214
+      Happy0_1: 2761309645219580807
+      Happy0_2: -8592539175475763600
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

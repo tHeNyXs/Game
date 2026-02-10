@@ -3,9 +3,9 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 
-public class BuffManager : MonoBehaviour, ICutsceneDialogue
+public class QuestionManager : MonoBehaviour, ICutsceneDialogue
 {
-    public static BuffManager Instance;
+    public static QuestionManager Instance;
 
     [Header("UI References")]
     public CanvasGroup canvasGroup;
@@ -14,15 +14,8 @@ public class BuffManager : MonoBehaviour, ICutsceneDialogue
     private DialogueSO currentDialogue;
     private int dialogueIndex;
     public Button[] choiceButtons;
-    public HealthBar healthBar;
-
-    [Header("Win UI")]
-    public GameObject winCanvas;
 
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private Animator playerAnimWin;    
-    [SerializeField] private Animator playerAnimLose;
-    [SerializeField] private Animator bossAnim;
     private PlayerState playerState;
     
     private void Awake()
@@ -44,7 +37,6 @@ public class BuffManager : MonoBehaviour, ICutsceneDialogue
             button.gameObject.SetActive(false);
 
         playerState = playerMovement.GetComponent<PlayerState>();
-        winCanvas.SetActive(false);
     }
 
      public void SetOption(bool tempFreeze, bool tempAutoDialogue, float tempAutoDelay)
@@ -83,17 +75,6 @@ public class BuffManager : MonoBehaviour, ICutsceneDialogue
 
         dialogueIndex++;
 
-        switch (line.result)
-        {
-            case DialogueResult.Win:
-                StartCoroutine(WinSequence());
-                break;
-
-            case DialogueResult.Die:
-                StartCoroutine(DeathSequence());
-                break;
-        }
-
         if (dialogueIndex >= currentDialogue.lines.Length)
         {
             AdvanceDialogue();
@@ -118,72 +99,10 @@ public class BuffManager : MonoBehaviour, ICutsceneDialogue
         else
         {
             choiceButtons[0].GetComponentInChildren<TMP_Text>().text = "ต่อไป";
-            choiceButtons[0].onClick.AddListener(OnContinuePressed);
+            choiceButtons[0].onClick.AddListener(EndDialogue);
             choiceButtons[0].gameObject.SetActive(true);
         }
     }
-
-    private void OnContinuePressed()
-    {
-        var line = currentDialogue.lines[dialogueIndex-1];
-
-        if (line.result != DialogueResult.None)
-        {
-            PlayResult(line.result);
-            return;
-        }
-
-        EndDialogue();
-    }
-
-    private void PlayResult(DialogueResult result)
-    {
-        switch (result)
-        {
-            case DialogueResult.Win:
-                StartCoroutine(WinSequence());
-                break;
-
-            case DialogueResult.Die:
-                StartCoroutine(DeathSequence());
-                break;
-        }
-    }
-
-    void win()
-    {
-        winCanvas.SetActive(true);
-        // Time.timeScale = 0f;
-        Debug.Log("Player Wins");
-    }
-    IEnumerator WinSequence()
-    {
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Win");
-        EndDialogue();
-        playerAnimWin.gameObject.SetActive(true);
-        bossAnim.gameObject.SetActive(true);
-
-        playerAnimWin.Play("Happy");
-        bossAnim.Play("Lose");
-        win();
-        yield return new WaitForSeconds(5f);
-        winCanvas.SetActive(false);
-    }
-
-    IEnumerator DeathSequence()
-    {
-        yield return new WaitForSeconds(5f);
-        Debug.Log("Lose");
-        EndDialogue();
-        healthBar.SetHealth(0);
-        playerAnimLose.gameObject.SetActive(true);
-        bossAnim.gameObject.SetActive(true);
-
-        playerAnimLose.Play("Sad");
-        bossAnim.Play("WinAnimation");
-    }
-
 
     private void ChooseOption(DialogueSO dialogueSO)
     {

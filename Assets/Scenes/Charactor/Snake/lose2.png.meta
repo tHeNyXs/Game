@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 9ba44ef9288872540a0f10436da0e776
+guid: cce89c70f79e6504e95e1553899a102c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1426366445350438512
-    second: Attack0_0
+      213: 8470939365942542944
+    second: lose2_0
+  - first:
+      213: 7534828179083892724
+    second: lose2_1
+  - first:
+      213: -8226510077410499888
+    second: lose2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack0_0
+      name: lose2_0
       rect:
         serializedVersion: 2
-        x: 50
-        y: 138
-        width: 2850
-        height: 2707
+        x: 289
+        y: 730
+        width: 2177
+        height: 837
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 099b9517647843ce0800000000000000
-      internalID: -1426366445350438512
+      spriteID: 062c0ece872de8570800000000000000
+      internalID: 8470939365942542944
       vertices: []
       indices: 
       edges: []
@@ -125,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 72ab2ebc63f41514d9addd3324b730bf
+    spriteID: e9ca81a78afe567409b8a2f948b16a0c
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +141,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Attack0_0: -1426366445350438512
+      lose2_0: 8470939365942542944
+      lose2_1: 7534828179083892724
+      lose2_2: -8226510077410499888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -17,7 +17,8 @@ public class NormalCutscene : MonoBehaviour
     public enum CutsceneDialogueType
     {
         Story,
-        Buff
+        Buff,
+        Question,
     }
     public CutsceneDialogueType dialogueType;
     
@@ -54,6 +55,9 @@ public class NormalCutscene : MonoBehaviour
 
             case CutsceneDialogueType.Buff:
                 manager = BuffManager.Instance;
+                break;
+            case CutsceneDialogueType.Question:
+                manager = QuestionManager.Instance;
                 break;
         }
 
